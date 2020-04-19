@@ -14,7 +14,7 @@ class Menu extends Phaser.Scene {
 
     create() {
         //menu display
-        this.add.image(640, 480, 'starfield').setOrigin(0.5);
+        this.add.image(640, 480, 'starfield').setOrigin(0,0);
 
         let menuConfig = {
             fontFamily: 'Courier',
@@ -34,7 +34,7 @@ class Menu extends Phaser.Scene {
         let centerY = game.config.height/2;
         let textSpacer = 64;
 
-        this.bgMusic = this.sound.add('sfx_music', { volume: 0.5, loop: true });
+        this.bgMusic = this.sound.add('sfx_music', { volume: 1, loop: true });
         
         this.add.text(centerX, centerY- textSpacer, 'ROCKET PATROL', menuConfig).setOrigin(0.5);
         this.add.text(centerX, centerY, 'Use <- -> arrows to move & (F) to fire', menuConfig).setOrigin(0.5);
