@@ -4,13 +4,18 @@ class Menu extends Phaser.Scene {
     }
     preload() {
         // load audio
-        this.load.audio('sfx_select', './assets/blip_select12.wav');
+        this.load.audio('sfx_select', './assets/selectNew.wav');
         this.load.audio('sfx_explosion', './assets/pteroDeath.wav');
         this.load.audio('sfx_rocket', './assets/spearThrow.wav');
+        this.load.audio('sfx_bee', './assets/beeDeath.wav');
+        this.load.audio('sfx_music', './assets/backgroundMusic.mp3');
+        this.load.image('starfield', './assets/background.png');
     }
 
     create() {
         //menu display
+        this.add.image(640, 480, 'starfield');
+
         let menuConfig = {
             fontFamily: 'Courier',
             fontSize: '28px',
@@ -29,6 +34,8 @@ class Menu extends Phaser.Scene {
         let centerY = game.config.height/2;
         let textSpacer = 64;
 
+        this.bgMusic = this.sound.add('sfx_music', { volume: 0.5, loop: true });
+        
         this.add.text(centerX, centerY- textSpacer, 'ROCKET PATROL', menuConfig).setOrigin(0.5);
         this.add.text(centerX, centerY, 'Use <- -> arrows to move & (F) to fire', menuConfig).setOrigin(0.5);
         menuConfig.backgroundColor = '#00FF00';
@@ -41,6 +48,8 @@ class Menu extends Phaser.Scene {
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
       }
       update() {
+        this.bgMusic.play();
+
         if (Phaser.Input.Keyboard.JustDown(keyLEFT)) {
           // easy mode
           game.settings = {
