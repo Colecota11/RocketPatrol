@@ -14,7 +14,7 @@ class Menu extends Phaser.Scene {
 
     create() {
         //menu display
-        this.add.image(640, 480, 'starfield').setOrigin(640,480);
+        this.add.image(640, 480, 'starfield').setOrigin(50,50);
 
         let menuConfig = {
             fontFamily: 'Courier',
