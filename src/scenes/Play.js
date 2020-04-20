@@ -17,7 +17,8 @@ class Play extends Phaser.Scene {
 
     create() {
         // place tile sprite
-        this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0, 0);
+        this.add.image(640, 480, 'starfield').setOrigin(1);
+        //this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0, 0);
         // white rectangle borders
        /* this.add.rectangle(5, 5, 630, 32, 0xFFFFFF).setOrigin(0, 0);
         this.add.rectangle(5, 443, 630, 32, 0xFFFFFF).setOrigin(0, 0);
@@ -45,10 +46,10 @@ class Play extends Phaser.Scene {
         this.p1Score = 0;
         // score display
         let scoreConfig = {
-            fontFamily: 'Courier',
+            fontFamily: 'Arial',
             fontSize: '28px',
-            backgroundColor: '#F3B141',
-            color: '#843605',
+            backgroundColor: '0',
+            color: '#fff',
             align: 'right',
             padding: {
                 top: 5,
@@ -76,7 +77,7 @@ class Play extends Phaser.Scene {
         if (this.gameOver && Phaser.Input.Keyboard.JustDown(keyLEFT)) {
             this.scene.start("menuScene");
         }
-        this.starfield.tilePositionX -= 4;
+       //this.starfield.tilePositionX -= 4;
         if (!this.gameOver) {
             this.p1Rocket.update();
             this.ship01.update();               // update spaceships (x3)

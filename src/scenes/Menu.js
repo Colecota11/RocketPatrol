@@ -14,13 +14,13 @@ class Menu extends Phaser.Scene {
 
     create() {
         //menu display
-        this.add.image(640, 480, 'starfield');//.setOrigin(0.5);
+        this.add.image(640, 480, 'starfield').setOrigin(1);
 
         let menuConfig = {
-            fontFamily: 'Courier',
+            fontFamily: 'Arial',
             fontSize: '28px',
-            backgroundColor: '#F3B141',
-            color: '#843605',
+            backgroundColor: 'null',
+            color: '#fff',
             align: 'right',
             padding: {
                 top: 5,
@@ -38,8 +38,8 @@ class Menu extends Phaser.Scene {
         
         this.add.text(centerX, centerY- textSpacer, 'ROCKET PATROL MOD', menuConfig).setOrigin(0.5);
         this.add.text(centerX, centerY, 'Use <- -> arrows to move & (F) to fire', menuConfig).setOrigin(0.5);
-        menuConfig.backgroundColor = '#00FF00';
-        menuConfig.color = '#000';
+        menuConfig.backgroundColor = '0';
+        menuConfig.color = '#fff';
         this.add.text(centerX, centerY + textSpacer, 'Press <- for Easy or -> for Hard', menuConfig).setOrigin(0.5);
 
         //this.scene.start("playScene");
