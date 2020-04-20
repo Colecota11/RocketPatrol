@@ -17,8 +17,7 @@ class Play extends Phaser.Scene {
 
     create() {
         // place tile sprite
-        this.add.image(640, 480, 'starfield').setOrigin(0.5);
-        //this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0, 0);
+        this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0, 0);
         // white rectangle borders
        /* this.add.rectangle(5, 5, 630, 32, 0xFFFFFF).setOrigin(0, 0);
         this.add.rectangle(5, 443, 630, 32, 0xFFFFFF).setOrigin(0, 0);
